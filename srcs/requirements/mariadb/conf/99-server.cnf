@@ -1,0 +1,4 @@
+# this .cnf file will fusion with the default one and take the values of the variables set up here
+[mysqld]
+
+bind-address            = 0.0.0.0

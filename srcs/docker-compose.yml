@@ -1,24 +1,47 @@
 
 services:
   mariadb:
-    container_name: mariadb
     build:
-      context: ./requirements/mariadb
-      dockerfile: Dockerfile
-
-    env_file:
-      - .env
-
-    ports:
-      - "3306:3306"
-
+      context: .
+      dockerfile: requirements/mariadb/Dockerfile
+    container_name: mariadb
     networks:
       - inception_network
-    
-    # 5. Optionnel pour l'instant, mais obligatoire pour éviter de perdre tes données
     # volumes:
     #   - mariadb_data:/var/lib/mysql
+    env_file:
+      - .env
+    restart: always
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: requirements/wordpress/Dockerfile
+    container_name: wordpress
+    depends_on:
+      - mariadb
+    networks:
+      - inception_network
+    # volumes:
+    #   - .env
+    restart: always
 
 networks:
   inception_network:
     driver: bridge
+
+# if my vm crash, remember to create mariadb and worpress database folder (mkdir -p /home/maballet/data/mariadb or wordpress)
+  # volumes:
+  #   mariadb_data:
+  #     driver: local
+  #     driver_opts:
+  #       type: 'none'
+  #       o: 'bind'
+  #       device: '/home/maballet/data/mariadb'
+
+  #   wordpress_data:
+  #     driver: local
+  #     driver_opts:
+  #       type: 'none'
+  #       o: 'bind'
+  #       device: '/home/maballet/data/wordpress'
