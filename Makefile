@@ -34,11 +34,8 @@ fclean: down
 	@docker system prune -a --volumes -f
 	@sudo rm -rf $(DATA_DIR)/mariadb
 	@sudo rm -rf $(DATA_DIR)/wordpress
+	@sudo chmod 777 $(DATA_DIR)
 	@echo "$(GREEN)Tout a été réinitialisé !$(STD)"
-
-bonus:
-# 	@ls ../data_save/wordpress/wp-content/uploads/2026/06
-	@sudo cp -r ../custom ../data/wordpress/wp-content/uploads/2026/
 
 re: fclean all
 
