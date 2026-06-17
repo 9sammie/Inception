@@ -54,6 +54,7 @@ Add `127.0.0.1 maballet.42.fr` to your local `/etc/hosts` file.
 ## 📚 Resources & AI Use Description
 
 ### Documentation & References
+*	[Overall guide for this project](https://medium.com/@ssterdev/inception-guide-42-project-part-i-7e3af15eb671)
 *   [Docker Documentation](https://docs.docker.com/)
 *   [NGINX Server Administration Guide](https://nginx.org/en/docs/)
 *   [WordPress Command Line Interface (WP-CLI)](https://wp-cli.org/)

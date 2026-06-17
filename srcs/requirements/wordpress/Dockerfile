@@ -24,4 +24,12 @@ WORKDIR /var/www/html
 
 EXPOSE 9000
 
+RUN mkdir -p /run/php && chown -R www-data:www-data /run/php
+
+RUN chown -R www-data:www-data /var/www/html
+
+RUN sed -i 's|error_log = .*|error_log = /proc/self/fd/2|g' /etc/php/8.2/fpm/php-fpm.conf
+
+USER www-data
+
 ENTRYPOINT ["/usr/local/bin/wp-conf.sh"]
