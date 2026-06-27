@@ -6,7 +6,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     openssl \
     && rm -rf /var/lib/apt/lists/*
 
-# SSL certificate folder creation
 RUN mkdir -p /etc/nginx/ssl
 
 # auto signed SSL certificate generation 

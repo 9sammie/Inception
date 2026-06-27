@@ -47,5 +47,6 @@ fi
 echo "launching PHP-FPM 8.2..."
 
 chown -R www-data:www-data /var/www/wordpress
+
 # make it turn in front (php-fpm)
 exec php-fpm8.2 -F

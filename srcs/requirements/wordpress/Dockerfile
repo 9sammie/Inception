@@ -13,7 +13,7 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 # have executable file in binary system
 RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
 
-# conf fig installing wordpress
+# config installing wordpress
 COPY ./requirements/wordpress/conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 
 COPY ./requirements/wordpress/tools/wp-conf.sh /usr/local/bin/wp-conf.sh
