@@ -32,9 +32,6 @@ Every service (NGINX, WordPress, MariaDB) runs inside its own dedicated containe
 
 ## Instructions
 
-### Prerequisites
-Make sure your system has `docker` and `docker-compose` installed.
-
 ### Execution Commands
 The `Makefile` at the root of the repository automates the entire process:
 
@@ -43,11 +40,6 @@ The `Makefile` at the root of the repository automates the entire process:
 *   **`make clean`**: Stops the infrastructure and removes unused Docker images to save space.
 *   **`make fclean`**: Performs a full reset. Removes all containers, networks, images, and physically purges the data volumes on the host system (`/home/maballet/data`).
 *   **`make bonus`**: Automatically swaps the current database and media state with a pre-saved custom configuration (`data_save`), restores standard user permissions (`www-data`), and boots the system.
-
-### Accessing the Site
-Add `127.0.0.1 maballet.42.fr` to your local `/etc/hosts` file.
-*   **Main Website**: `https://maballet.42.fr`
-*   **Admin Dashboard**: `https://maballet.42.fr/wp-login.php`
 
 ---
 
