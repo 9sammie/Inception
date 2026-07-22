@@ -1,3 +1,5 @@
+# 42 project: Inception
+
 *This project has been created as part of the 42 curriculum by maballet.*
 
 ---
@@ -39,7 +41,6 @@ The `Makefile` at the root of the repository automates the entire process:
 *   **`make down`**: Safely stops and removes the containers without losing persistent data.
 *   **`make clean`**: Stops the infrastructure and removes unused Docker images to save space.
 *   **`make fclean`**: Performs a full reset. Removes all containers, networks, images, and physically purges the data volumes on the host system (`/home/maballet/data`).
-*   **`make bonus`**: Automatically swaps the current database and media state with a pre-saved custom configuration (`data_save`), restores standard user permissions (`www-data`), and boots the system.
 
 ---
 
